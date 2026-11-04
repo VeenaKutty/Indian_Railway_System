@@ -1,10 +1,10 @@
 # Defining Variables for Indian Railway System
 
-train_name = "Rajdhani Express"
-train_number = 12301                  
-ticket_price = 2450.50               
-is_ac_available = True               
-seat_numbers = [1, 2, 3, 4, 5]
+# train_name = "Rajdhani Express"
+# train_number = 12301                  
+# ticket_price = 2450.50               
+# is_ac_available = True               
+# seat_numbers = [1, 2, 3, 4, 5]
 
 # Showing the Details using print Function
 
