@@ -121,3 +121,22 @@
 #     if i == 12:
 #         continue
 #     print(i)
+
+
+trains = [
+    {"name": "Rajdhani Express",
+     "number":12301,
+     "destination":"New Delhi"},
+    {"name": "Shatabi Express",
+     "number":12001,
+     "destination":"Chennai"},
+    {"name": "Duronto Express",
+     "number":12291,
+     "destination":"Mumbai"}
+]
+
+print("Available Trains: ")
+for train in trains:
+    print(f"{train['number']} - {train['name']} to {train['destination']}")
+
+print(train)

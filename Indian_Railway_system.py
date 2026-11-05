@@ -64,40 +64,58 @@
 
 #Age based Pricings
 
+# age = int(input("Enter passenger age: "))
+
+# if age < 5:
+#     price = 0
+#     category = "Infant (Free)"
+# elif age < 12:
+#     price = 750
+#     category = "Child (50% discount)"
+# elif age >= 60:
+#     price = 1200
+#     category = "Senior Citizen (20% discount)"
+# else:
+#     price = 1500
+#     category = "Adult"
+
+# print(f"Category: {category}")
+# print(f"Ticket Price: ₹{price}")
+
 # For Loop - Display available trains
 
-# trains = [
-#     {"name": "Rajdhani Express",
-#      "number":12301,
-#      "destination":"New Delhi"},
-#     {"name": "Shatabi Express",
-#      "number":12001,
-#      "destination":"Chennai"},
-#     {"name": "Duronto Express",
-#      "number":12291,
-#      "destination":"Mumbai"}
-# ]
+trains = [
+    {"name": "Rajdhani Express",
+     "number":12301,
+     "destination":"New Delhi"},
+    {"name": "Shatabi Express",
+     "number":12001,
+     "destination":"Chennai"},
+    {"name": "Duronto Express",
+     "number":12291,
+     "destination":"Mumbai"}
+]
 
-# print("Available Trains: ")
-# for train in trains:
-#     print(f"{train['number']} - {train['name']} to {train['destination']}")
+print("Available Trains: ")
+for train in trains:
+    print(f"{train['number']} - {train['name']} to {train['destination']}")
 
 # While Loop - Booking System Menu
 
-print("\n=== Booking Menu ===")
-choice = 0
+# print("\n=== Booking Menu ===")
+# choice = 0
 
-while choice != 3:
-    print("1. Book Ticket")
-    print("2. Check Status")
-    print("3. Exit")
-    choice = int(input("Enter your choice: "))
+# while choice != 3:
+#     print("1. Book Ticket")
+#     print("2. Check Status")
+#     print("3. Exit")
+#     choice = int(input("Enter your choice: "))
 
-    if choice == 1:
-        print("Booking ticket ......")
-    elif choice == 2:
-        print("Checking Status")
-    elif choice == 3:
-        print("Thank you for using Indian Railways!")
-    else:
-        print("Invalid Choice!")
+#     if choice == 1:
+#         print("Booking ticket ......")
+#     elif choice == 2:
+#         print("Checking Status")
+#     elif choice == 3:
+#         print("Thank you for using Indian Railways!")
+#     else:
+#         print("Invalid Choice!")
