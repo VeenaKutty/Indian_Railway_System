@@ -1,142 +1,127 @@
-#For Loop----
+# For Loop----
 
-# for i in range(0,11):
-#     print(i)
+for i in range(0,11):
+    print(i)
 
-# for i in range(1,21):
-#     if i %2 ==0:
-#         print(i)
+for i in range(1,21):
+    if i %2 ==0:
+        print(i)
 
-# for i in range(1,21):
-#     if i %2 !=0:
-#         print(i)
+for i in range(1,21):
+    if i %2 !=0:
+        print(i)
 
-# num = 5
+num = 5
 
-# for i in range(1,11):
-#     print(num, "x", i, "=", num*i)
+for i in range(1,11):
+    print(num, "x", i, "=", num*i)
 
-# total = 0
+total = 0
 
-# for i in range(1,11):
-#     total = total + i
+for i in range(1,11):
+    total = total + i
 
-# print("Total: ",total)
+print("Total: ",total)
 
-# num = 5
-# fact = 1
+num = 5
+fact = 1
 
-# for i in range(1,num + 1):
-#     fact = fact * i
+for i in range(1,num + 1):
+    fact = fact * i
 
-# print("Factorial: ", fact)
+print("Factorial: ", fact)
 
-# chars = "Python"
+chars = "Python"
 
-# for char in chars:
-#     print(char)
+for char in chars:
+    print(char)
 
-# names = ["Aarti","Suraj","Tejas","Om","Yash","Yash"]
+names = ["Aarti","Suraj","Tejas","Om","Yash","Yash"]
 
-# for name in names:
-#     print(name)
+for name in names:
+    print(name)
 
-# num = [10,30,20,45,40,200,60,202,756]
+num = [10,30,20,45,40,200,60,202,756]
 
-# largest = num[0]
+largest = num[0]
 
-# for i in num:
-#     if i > largest:
-#         largest = i
+for i in num:
+    if i > largest:
+        largest = i
 
-# print("The Largest number: ", largest)
+print("The Largest number: ", largest)
 
-# text = "python programming"
-# count = 0
+text = "python programming"
+count = 0
 
-# for char in text:
-#     if char in "aeiou":
-#         count += 1
+for char in text:
+    if char in "aeiou":
+        count += 1
 
-# print("Number of vowels: ",count)
+print("Number of vowels: ",count)
 
 # While Loop-----
 
-# i = 1
+i = 1
+while i <= 10:
+    print(i)
+    i+=1
 
-# while i <= 10:
-#     print(i)
-#     i+=1
 
+i = 1
+total = 0
 
-# i = 1
+while i <=10:
+    total += i
+    i += 1
 
-# total = 0
+print("Total: ",total)
 
-# while i <=10:
-#     total += i
-#     i += 1
+num = 12345
+reverse = 0
 
-# print("Total: ",total)
+while num > 0:
+    digit = num % 10
+    reverse = reverse * 10 + digit
+    num //= 10
 
-# num = 12345
-# reverse = 0
+print("Reverse number: ", reverse)
 
-# while num > 0:
-#     digit = num % 10
-#     reverse = reverse * 10 + digit
-#     num //= 10
+num = 123456
 
-# print("Reverse number: ", reverse)
+count = 0
 
-# num = 123456
+while num > 0:
+    num //= 10
+    count += 1
 
-# count = 0
+print("The nummber of digits: ", count)
 
-# while num > 0:
-#     num //= 10
-#     count += 1
+correct_number = 4
 
-# print("The nummber of digits: ", count)
+guess = int(input("Enter a number: "))
 
-# correct_number = 4
+while guess != correct_number:
+    print("Wrong Number!!")
 
-# guess = int(input("Enter a number: "))
+    guess = int(input("Enter a number: "))
 
-# while guess != correct_number:
-#     print("Wrong Number!!")
-
-#     guess = int(input("Enter a number: "))
-
-# print("Correct Guess!!")
+print("Correct Guess!!")
 
 # Loop Control Statements
 
-# for i in range(20):
-#     if i == 12:
-#         break
-#     print(i)
+for i in range(20):
+    if i == 12:
+        break
+    print(i)
 
-# for i in range(20):
-#     if i == 12:
-#         continue
-#     print(i)
+for i in range(20):
+    if i == 12:
+        continue
+    print(i)
 
 
-trains = [
-    {"name": "Rajdhani Express",
-     "number":12301,
-     "destination":"New Delhi"},
-    {"name": "Shatabi Express",
-     "number":12001,
-     "destination":"Chennai"},
-    {"name": "Duronto Express",
-     "number":12291,
-     "destination":"Mumbai"}
-]
-
-print("Available Trains: ")
-for train in trains:
-    print(f"{train['number']} - {train['name']} to {train['destination']}")
-
-print(train)
+x = 0
+while x < 5:
+    print(x)
+    x+=1

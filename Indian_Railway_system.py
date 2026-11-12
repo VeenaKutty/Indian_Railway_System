@@ -1,10 +1,10 @@
 # Defining Variables for Indian Railway System
 
-# train_name = "Rajdhani Express"
-# train_number = 12301                  
-# ticket_price = 2450.50               
-# is_ac_available = True               
-# seat_numbers = [1, 2, 3, 4, 5]
+train_name = "Rajdhani Express"
+train_number = 12301                  
+ticket_price = 2450.50               
+is_ac_available = True               
+seat_numbers = [1, 2, 3, 4, 5]
 
 # Showing the Details using print Function
 
@@ -84,21 +84,21 @@
 
 # For Loop - Display available trains
 
-trains = [
-    {"name": "Rajdhani Express",
-     "number":12301,
-     "destination":"New Delhi"},
-    {"name": "Shatabi Express",
-     "number":12001,
-     "destination":"Chennai"},
-    {"name": "Duronto Express",
-     "number":12291,
-     "destination":"Mumbai"}
-]
+# trains = [
+#     {"name": "Rajdhani Express",
+#      "number":12301,
+#      "destination":"New Delhi"},
+#     {"name": "Shatabi Express",
+#      "number":12001,
+#      "destination":"Chennai"},
+#     {"name": "Duronto Express",
+#      "number":12291,
+#      "destination":"Mumbai"}
+# ]
 
-print("Available Trains: ")
-for train in trains:
-    print(f"{train['number']} - {train['name']} to {train['destination']}")
+# print("Available Trains: ")
+# for train in trains:
+#     print(f"{train['number']} - {train['name']} to {train['destination']}")
 
 # While Loop - Booking System Menu
 
@@ -119,3 +119,53 @@ for train in trains:
 #         print("Thank you for using Indian Railways!")
 #     else:
 #         print("Invalid Choice!")
+
+# Ticket Price Calculator
+
+# def calculate_ticket_price(distance,class_type):
+#     base_rate =0.5
+
+#     if class_type == "Sleeper":
+#         multiplier = 1.0
+#     elif class_type == "AC 3 Tier":
+#         multiplier = 1.5
+#     elif class_type == "AC 2 Tier":
+#         multiplier = 2.0
+#     elif class_type == "AC 1st Class":
+#         multiplier = 3.0
+#     else:
+#         multiplier = 1.0
+
+#     price = distance * base_rate * multiplier
+
+#     return round(price,2)
+
+# distance = 500
+# class_type = "AC 2 Tier"
+# price = calculate_ticket_price(distance,class_type)
+
+# print(f"Price for {distance}km in {class_type}:₹{price}")
+
+# Ticket Booking
+
+def book_ticket(passenger_name,age,destination,class_type = "Sleeper"):
+    ticket = {
+        "Passenger Name":passenger_name,
+        "Age":age,
+        "Destination":destination,
+        "Booking ID":f"BK{hash(passenger_name)% 10000:04d}"
+    }
+    return ticket
+
+def get_passenger_details(*args,**kwargs):
+    print("Positional arguments: ", args)
+    print("Keyword arguments: ",kwargs)
+
+
+ticket1 = book_ticket("Rahul Kumar",28,"Mumbai")
+ticket2 = book_ticket("Priya Singh", 32,"Delhi","AC 3 Tier")
+
+print("\nTicket 1: ",ticket1)
+print("Ticket 2: ",ticket2)
+
+get_passenger_details("Rahul",28,"Mumbai",class_type = "Sleeper",meal_preference = "Veg")
