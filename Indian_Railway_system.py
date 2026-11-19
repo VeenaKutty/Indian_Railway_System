@@ -148,24 +148,58 @@ seat_numbers = [1, 2, 3, 4, 5]
 
 # Ticket Booking
 
-def book_ticket(passenger_name,age,destination,class_type = "Sleeper"):
-    ticket = {
-        "Passenger Name":passenger_name,
-        "Age":age,
-        "Destination":destination,
-        "Booking ID":f"BK{hash(passenger_name)% 10000:04d}"
-    }
-    return ticket
+# def book_ticket(passenger_name,age,destination,class_type = "Sleeper"):
+#     ticket = {
+#         "Passenger Name":passenger_name,
+#         "Age":age,
+#         "Destination":destination,
+#         "Booking ID":f"BK{hash(passenger_name)% 10000:04d}"
+#     }
+#     return ticket
 
-def get_passenger_details(*args,**kwargs):
-    print("Positional arguments: ", args)
-    print("Keyword arguments: ",kwargs)
+# def get_passenger_details(*args,**kwargs):
+#     print("Positional arguments: ", args)
+#     print("Keyword arguments: ",kwargs)
 
 
-ticket1 = book_ticket("Rahul Kumar",28,"Mumbai")
-ticket2 = book_ticket("Priya Singh", 32,"Delhi","AC 3 Tier")
+# ticket1 = book_ticket("Rahul Kumar",28,"Mumbai")
+# ticket2 = book_ticket("Priya Singh", 32,"Delhi","AC 3 Tier")
 
-print("\nTicket 1: ",ticket1)
-print("Ticket 2: ",ticket2)
+# print("\nTicket 1: ",ticket1)
+# print("Ticket 2: ",ticket2)
 
-get_passenger_details("Rahul",28,"Mumbai",class_type = "Sleeper",meal_preference = "Veg")
+# get_passenger_details("Rahul",28,"Mumbai",class_type = "Sleeper",meal_preference = "Veg")
+
+# Calculate Discounts
+
+# calculate_discont = lambda price, discount_percentage : price * (1 - discount_percentage/100)
+
+# original_price = 1500
+
+# discounted_price = calculate_discont(original_price,20)
+
+# print(f"Original: ₹{original_price}, Discounted Price: ₹{discounted_price}")
+
+# Trains details using build in functions
+
+train = [
+    {"name":"Rajdhani","price":2500,"duration":16},
+    {"name":"Shatabdi","price":1800,"duration":8},
+    {"name":"Duronto","price":2000,"duration":12},
+]
+
+# map
+
+train_names =  list(map(lambda x: x['name'], train))
+print(f"\nTrain Names: {train_names}")
+
+# filter
+
+affordable_trains = list(filter(lambda x: x['price'] < 2200, train))
+print("Affordable Trains: ",[t["name"] for t in affordable_trains])
+
+# sorted
+
+sorted_by_price = sorted(train,key=lambda x: x["price"])
+print("Sorted by Price: ",[t["name"] for t in sorted_by_price])
+
