@@ -182,24 +182,95 @@ seat_numbers = [1, 2, 3, 4, 5]
 
 # Trains details using build in functions
 
-train = [
-    {"name":"Rajdhani","price":2500,"duration":16},
-    {"name":"Shatabdi","price":1800,"duration":8},
-    {"name":"Duronto","price":2000,"duration":12},
-]
+# train = [
+#     {"name":"Rajdhani","price":2500,"duration":16},
+#     {"name":"Shatabdi","price":1800,"duration":8},
+#     {"name":"Duronto","price":2000,"duration":12},
+# ]
 
 # map
 
-train_names =  list(map(lambda x: x['name'], train))
-print(f"\nTrain Names: {train_names}")
+# train_names =  list(map(lambda x: x['name'], train))
+# print(f"\nTrain Names: {train_names}")
 
 # filter
 
-affordable_trains = list(filter(lambda x: x['price'] < 2200, train))
-print("Affordable Trains: ",[t["name"] for t in affordable_trains])
+# affordable_trains = list(filter(lambda x: x['price'] < 2200, train))
+# print("Affordable Trains: ",[t["name"] for t in affordable_trains])
 
 # sorted
 
-sorted_by_price = sorted(train,key=lambda x: x["price"])
-print("Sorted by Price: ",[t["name"] for t in sorted_by_price])
+# sorted_by_price = sorted(train,key=lambda x: x["price"])
+# print("Sorted by Price: ",[t["name"] for t in sorted_by_price])
 
+# OOP based Train System
+
+# class Train:
+#     def __init__(self,train_number,name,source,destination,total_seats):
+#         self.train_number =train_number
+#         self.name = name
+#         self.source = source
+#         self.destination = destination
+#         self.total_seats = total_seats
+#         self.available_seats = total_seats
+
+#     def display_info(self):
+#         print(f"{self.train_number} - {self.name}")
+#         print(f"Route: {self.source} to {self.destination}")
+#         print(f"Available Seats: {self.available_seats}/{self.total_seats}")
+
+#     def book_seats(self):
+#         if self.available_seats > 0:
+#             self.available_seats -= 1 
+#             return True
+#         return False
+
+# train1 = Train(12301,"Rajdhani Express","Howrah","New Delhi",500)
+# train2 = Train(12001,"Shatabdi Express","Chennai","Bangalore",400)
+
+# print("==Train Information==")
+# train1.display_info()
+# print()
+# train2.display_info()
+
+# print("\n==Booking Tickets==")
+
+# if train1.book_seats():
+#     print("Seat Booked successfully in Rajdhani Express!")
+#     train1.display_info()
+
+#Inheritance
+class Train:
+    def __init__(self,train_number,name,source,destination):
+        self.train_number=train_number
+        self.name = name
+        self.source = source
+        self.destination = destination
+
+    def get_info(self):
+        return f"{self.train_number} - {self.name}"
+    
+class ExpressTrain(Train):
+    def __init__(self,train_number,name,source,destination,max_speed):
+        super().__init__(train_number,name,source,destination)
+        self.max_speed = max_speed
+
+    def get_info(self):
+        base_info = super().get_info()
+        return f"{base_info} (Max Speed: {self.max_speed} km/h)"
+
+class PasengerTrain(Train):
+    def __init__(self, train_number, name, source, destination,stops):
+        super().__init__(train_number, name, source, destination)
+        self.stops = stops
+
+    def get_info(self):
+        base_info = super().get_info()
+        return f"{base_info} (Stops: {len(self.stops)})"
+
+express = ExpressTrain(12301,"Rajdhani Express","Howrah","New Delhi",130)
+passesnger = PasengerTrain(11001, "Intercity Express","Mumbai","Pune",["Lonavala","Khandala"])
+
+print("==Train Types==")
+print(f"Express Train: {express.get_info()}")
+print(f"Passenger Train: {passesnger.get_info()}")
